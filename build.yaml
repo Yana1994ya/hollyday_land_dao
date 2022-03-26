@@ -1,0 +1,13 @@
+targets:
+  $default:
+    builders:
+      code_gen_demo|mark_builder:
+        enabled: true
+
+builders:
+  builder:
+    import: 'package:hollyday_land_dao/builder.dart'
+    builder_factories: ['filterTagDaoBuilder','listDaoBuilder','fullDaoBuilder']
+    build_extensions: { '.dart': ['.objects.filter_tags.dart', '.objects.list.dart', '.objects.full.dart'] }
+    auto_apply: root_package
+    build_to: source
